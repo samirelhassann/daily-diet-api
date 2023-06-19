@@ -1,0 +1,20 @@
+### CREATE USER
+POST http://localhost:3333/users
+content-type: application/json
+
+{
+    "name": "john doe",
+    "email": "johndoe@gmail.com",
+    "password": "johndoe.123"
+}
+
+### LOGIN
+POST http://localhost:3333/auth
+content-type: application/json
+
+{
+    "email": "johndoe@gmail.com",
+    "password": "johndoe.123"
+}
+
+

@@ -1,0 +1,41 @@
+@bearerToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZWQ1MjI3NS02MThjLTRlYjktOGMwOC05MTFjNTY1YTgxZTEiLCJpYXQiOjE2ODcxMzQ4MTYsImV4cCI6MTY4NzIyMTIxNn0.kfu8SIHXhNuVblmThHUl186TcY7q7Yx3RDU9G4nOt0I
+
+### CREATE A MEAL
+POST http://localhost:3333/meals
+content-type: application/json
+Authorization: {{bearerToken}}
+
+{
+    "name": "meal 8",
+    "isOnDiet": true
+}
+
+### GET MEALS HISTORY BY USER
+GET http://localhost:3333/meals/history?page=1&size=20
+Authorization: {{bearerToken}}
+
+### EDIT MEAL BY ID
+PUT http://localhost:3333/meals/2608deff-2c1d-4e8a-987b-86a62bdbd93f
+content-type: application/json
+Authorization: {{bearerToken}}
+
+{
+    "name": "altered name",
+    "isOnDiet": false
+}
+
+
+### GET MEAL BY ID
+GET http://localhost:3333/meals/03ceb737-9fce-4e0d-ac34-26cdeb906deb
+Authorization: {{bearerToken}}
+
+
+### DELETE MEAL BY ID
+DELETE http://localhost:3333/meals/03ceb737-9fce-4e0d-ac34-26cdeb906deb
+Authorization: {{bearerToken}}
+
+### GET USER MEALS METRICS 
+GET http://localhost:3333/meals/metrics
+Authorization: {{bearerToken}}
+
+
